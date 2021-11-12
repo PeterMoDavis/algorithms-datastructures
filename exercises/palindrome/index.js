@@ -11,11 +11,17 @@
 //   return str.split('').reverse().join('') === str;
 // }
 
+// function palindrome(str) {
+//   let reversed = '';
+//   for (let char of str) {
+//     reversed = char + reversed;
+//   }
+//   return reversed === str;
+// }
+
 function palindrome(str) {
-  let reversed = '';
-  for (let char of str) {
-    reversed = char + reversed;
-  }
-  return reversed === str;
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1];
+  });
 }
 module.exports = palindrome;
